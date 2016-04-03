@@ -102,6 +102,12 @@ def call(body) {
                     }
                 },
                 "spec": {
+                    "volumes": [
+                        {
+                            "name": "secret-volume",
+                            "secret": {"secretName": "mysql-shiftwork-web"}
+                        }
+                    ],
                     "containers": [
                         {
                             "name": "${env.JOB_NAME}",
@@ -113,37 +119,13 @@ def call(body) {
                                     "protocol": "TCP"
                                 }
                             ],
+                            "volumeMounts": [
+                                {
+                                    "name": "secret-volume",
+                                    "mountPath": "/etc/secret"
+                                }
+                            ],
                             "env": [
-				{
-				    "name": "DB_USER",
-                                    "valueFrom": {
-                                        "secretKeyRef": {
-                                            "name": "mysql-shiftwork-web",
-                                            "key": "username"
-                                        }
-                                    }
-				    
-				},
-				{
-				    "name": "DB_PASSWORD",
-                                    "valueFrom": {
-                                        "secretKeyRef": {
-                                            "name": "mysql-shiftwork-web",
-                                            "key": "password"
-                                        }
-                                    }
-				    
-				},
-				{
-				    "name": "DB_HOST",
-                                    "value": "mysql"
-				    
-				},
-				{
-				    "name": "DB_NAME",
-                                    "value": "shiftworkweb"
-				    
-				},
                                 {
                                     "name": "KUBERNETES_NAMESPACE",
                                     "valueFrom": {
