@@ -29,7 +29,7 @@ def call(body) {
             "labels": {
                 "component": "${env.JOB_NAME}",
                 "container": "${config.label}",
-                "group": "quickstarts",
+                "group": "shiftwork",
                 "project": "${env.JOB_NAME}",
                 "provider": "fabric8",
                 "version": "${config.version}"
@@ -51,7 +51,7 @@ def call(body) {
             "selector": {
                 "component": "${env.JOB_NAME}",
                 "container": "${config.label}",
-                "group": "quickstarts",
+                "group": "shiftwork",
                 "project": "${env.JOB_NAME}",
                 "provider": "fabric8",
                 "version": "${config.version}"
@@ -73,7 +73,7 @@ def call(body) {
             "labels": {
                 "component": "${env.JOB_NAME}",
                 "container": "${config.label}",
-                "group": "quickstarts",
+                "group": "shiftwork",
                 "project": "${env.JOB_NAME}",
                 "provider": "fabric8",
                 "version": "${config.version}"
@@ -84,7 +84,7 @@ def call(body) {
             "selector": {
                 "component": "${env.JOB_NAME}",
                 "container": "${config.label}",
-                "group": "quickstarts",
+                "group": "shiftwork",
                 "project": "${env.JOB_NAME}",
                 "provider": "fabric8",
                 "version": "${config.version}"
@@ -95,7 +95,7 @@ def call(body) {
                     "labels": {
                         "component": "${env.JOB_NAME}",
                         "container": "${config.label}",
-                        "group": "quickstarts",
+                        "group": "shiftwork",
                         "project": "${env.JOB_NAME}",
                         "provider": "fabric8",
                         "version": "${config.version}"
